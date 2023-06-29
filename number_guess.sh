@@ -42,7 +42,7 @@ GUESSING_GAME() {
     fi
     read GUESSED_NUMBER
   done
-  if (( 0 == $BEST_GAME || $NUMBER_OF_TRIES < $BEST_GAME ))
+  if (( 0 == $GAMES_PLAYED || $NUMBER_OF_TRIES < $BEST_GAME ))
   then
     NEW_BEST_RESULT=$($PSQL "UPDATE users SET best_game='$NUMBER_OF_TRIES' WHERE username='$USERNAME'")
   fi
